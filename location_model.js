@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var Location = mongoose.Schema({
+var locationSchema = mongoose.Schema({
 	name: String,
 	coords: {
 		lat: Number,
@@ -8,4 +8,4 @@ var Location = mongoose.Schema({
 	}
 });
 
-module.exports = mongoose.model('Location', Location);
+var Location = mongoose.model('Location', locationSchema);

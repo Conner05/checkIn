@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var User = mongoose.Schema({
+var userSchema = mongoose.Schema({
 	name: String,
 	email: String,
     password: String,
@@ -8,4 +8,4 @@ var User = mongoose.Schema({
     isManager: Boolean
 });
 
-module.exports = mongoose.model('User', User);
+var User = mongoose.model('User', userSchema);

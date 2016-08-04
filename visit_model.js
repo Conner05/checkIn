@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var Visit = mongoose.Schema({
+var visitSchema = mongoose.Schema({
 	checkIn: {
 		time: Date,
 		comment: String
@@ -18,11 +18,11 @@ var Visit = mongoose.Schema({
 });
 
 /* Virtual Getters */
-Visit.virtual('user.checkIn').get(function() {
+visitSchema.virtual('user.checkIn').get(function() {
 	return this.user.name + ' checked in at ' + checkIn + ' at ' + location.name;
 });
-Visit.virtual('user.checkOut').get(function() {
+visitSchema.virtual('user.checkOut').get(function() {
 	return this.user.name + ' checked out at ' + checkOut + ' at ' + location.name;
 });
 
-module.exports = mongoose.model('Visit', Visit);
+var Visit = mongoose.model('Visit', visitSchema);

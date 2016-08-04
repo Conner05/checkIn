@@ -11,12 +11,14 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
+/*
 app.get('/', function(req, res) {
 	//res.send('Hello World!');
 	res.json({hello: 'Hello World!'});
 });
+*/
 
-var users = require('./users.js')(app);
+var users = require('./user_routes.js')(app);
 
 var server = app.listen(3000, function() {
 	console.log('Server listening on port 3000');
